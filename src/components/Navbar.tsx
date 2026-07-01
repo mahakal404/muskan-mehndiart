@@ -31,6 +31,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "#home" },
+    { name: "Meet Muskan", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Academy", href: "#academy" },
     { name: "Gallery", href: "#gallery" },
