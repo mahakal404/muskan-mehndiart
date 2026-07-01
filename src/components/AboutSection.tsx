@@ -19,13 +19,11 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ type: "spring", stiffness: 60, damping: 15, duration: 0.8 }}
             className="relative"
           >
-            {/* Soft cyan glow behind the image container */}
-            <div className="absolute inset-0 bg-cyan-400/20 blur-3xl rounded-full scale-90" />
-            
-            <div className="relative w-full max-w-md mx-auto md:max-w-none aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(34,211,238,0.15)] group">
+            {/* Cinematic Image Container */}
+            <div className="relative w-full max-w-md mx-auto md:max-w-none aspect-[4/5] rounded-2xl overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_-5px_rgba(34,211,238,0.3)] group">
               <Image
                 src="/muskan.webp"
                 alt="Muskan - Mehndi Artist"
@@ -35,7 +33,7 @@ export default function AboutSection() {
                 priority
               />
               {/* Glassmorphism gradient overlay for elegant blending */}
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0B1120]/80 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0B1120]/80 to-transparent pointer-events-none z-10" />
             </div>
           </motion.div>
 
@@ -44,20 +42,20 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.1, duration: 0.8 }}
             className="flex flex-col justify-center"
           >
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                About Muskan
+                Meet Muskan
               </span>
             </h2>
             
-            <p className="text-amber-400 text-lg font-medium mb-6 tracking-wide">
+            <p className="text-amber-400 text-lg font-medium mb-6 tracking-wider md:tracking-widest uppercase text-sm">
               Turning Passion into Premium Artistry
             </p>
             
-            <div className="space-y-6 text-slate-300 leading-relaxed text-base md:text-lg mb-8">
+            <div className="space-y-6 text-slate-300 leading-relaxed text-base md:text-lg mb-10">
               <p>
                 With a deep-rooted love for traditional art and an eye for modern aesthetics, Muskan brings the magic of mehndi to life. Specializing in highly intricate bridal patterns and elegant contemporary designs, she transforms every occasion into an unforgettable celebration.
               </p>
@@ -66,15 +64,15 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Glassmorphism Stat/Highlight Box */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-5 py-3.5 hover:bg-white/10 transition-colors border-l-4 border-l-cyan-400">
+            {/* Premium Badges: Glassmorphism Pills */}
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 cursor-default">
                 <Globe className="w-5 h-5 text-cyan-400" />
                 <span className="text-slate-200 font-medium text-sm">Available Worldwide</span>
               </div>
               
-              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-5 py-3.5 hover:bg-white/10 transition-colors border-l-4 border-l-amber-400">
-                <Leaf className="w-5 h-5 text-amber-400" />
+              <div className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 cursor-default">
+                <Leaf className="w-5 h-5 text-emerald-400" />
                 <span className="text-slate-200 font-medium text-sm">100% Organic Henna</span>
               </div>
             </div>
