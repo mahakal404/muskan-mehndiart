@@ -1,19 +1,33 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    
+    // Update glassmorphism state
+    setScrolled(latest > 20);
+
+    // Smart sticky logic
+    if (latest > previous && latest > 50) {
+      // Scrolling down and past threshold
+      setHidden(true);
+      if (isOpen) setIsOpen(false); // Close mobile menu when hiding
+    } else {
+      // Scrolling up or at the top
+      setHidden(false);
+    }
+  });
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -25,8 +39,8 @@ export default function Navbar() {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      animate={{ opacity: 1, y: hidden ? "-100%" : 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
       className="fixed top-0 left-0 right-0 z-50 px-4 pt-4"
     >
       <div
