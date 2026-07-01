@@ -14,7 +14,30 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
-  description: "Professional Mehndi Artist from Valsad, available worldwide. Book your special day with Muskan Mehndi Art.",
+  description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+  metadataBase: new URL("https://muskanmehndiart.netlify.app"),
+  openGraph: {
+    title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
+    description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+    url: "https://muskanmehndiart.netlify.app",
+    siteName: "Muskan Mehndi Art",
+    images: [
+      {
+        url: "/mushkan.jpg",
+        width: 800,
+        height: 800,
+        alt: "Muskan Mehndi Art Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
+    description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+    images: ["/mushkan.jpg"],
+  },
 };
 
 export default function RootLayout({

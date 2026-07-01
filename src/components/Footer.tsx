@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,13 +10,23 @@ export default function Footer() {
         {/* Top section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <h2 className="font-heading text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
-              Muskan Mehndi Art
-            </h2>
-            <p className="text-slate-400 font-light">
-              Exquisite Bridal Mehndi &amp; Henna Artistry
-            </p>
+          <div className="text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-4">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.15)] flex-shrink-0">
+              <Image
+                src="/mushkan.jpg"
+                alt="Muskan Mehndi Art Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col mt-2">
+              <h2 className="font-heading text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                Muskan Mehndi Art
+              </h2>
+              <p className="text-slate-400 font-light">
+                Exquisite Bridal Mehndi &amp; Henna Artistry
+              </p>
+            </div>
           </div>
 
           {/* Social & Contact */}

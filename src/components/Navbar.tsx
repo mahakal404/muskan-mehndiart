@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,15 @@ export default function Navbar() {
         <div className="px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2 group">
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-cyan-400/50 group-hover:border-cyan-400 group-hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all duration-300">
+                <Image
+                  src="/mushkan.jpg"
+                  alt="Muskan Mehndi Art Logo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <span className="font-heading text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-all duration-300">
                 Muskan Mehndi Art
               </span>
