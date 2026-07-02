@@ -18,6 +18,7 @@ export default function Footer() {
                 fill
                 sizes="80px"
                 className="object-cover"
+                priority
               />
             </div>
             <div className="flex flex-col mt-2">
