@@ -50,7 +50,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${outfit.variable} scroll-smooth antialiased font-sans`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
