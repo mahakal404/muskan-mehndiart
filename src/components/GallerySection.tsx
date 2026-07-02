@@ -11,10 +11,12 @@ const galleryImages = [
   "/Gallery4.webp",
   "/Gallery5.webp",
   "/Gallery6.webp",
+  "/Gallery7.webp",
   "/Gallery8.webp",
   "/Gallery9.webp",
   "/Gallery10.webp",
-  "/Gallery11.webp"
+  "/Gallery11.webp",
+  "/Gallery12.webp"
 ];
 
 export default function GallerySection() {
