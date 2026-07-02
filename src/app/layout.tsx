@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
   description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
   metadataBase: new URL("https://muskanmehndiart.netlify.app"),
+  icons: {
+    icon: "/mushkan.jpg",
+    apple: "/mushkan.jpg",
+  },
   openGraph: {
     title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
     description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
