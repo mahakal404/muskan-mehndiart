@@ -21,7 +21,7 @@ const galleryImages = [
 
 export default function GallerySection() {
   return (
-    <section id="gallery" className="py-28 bg-[#0B1120] relative overflow-hidden">
+    <section id="gallery" className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

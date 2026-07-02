@@ -6,7 +6,7 @@ import { Globe, Leaf } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-[#0B1120] relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
@@ -29,7 +29,7 @@ export default function AboutSection() {
                 alt="Muskan - Mehndi Artist"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 priority
               />
               {/* Glassmorphism gradient overlay for elegant blending */}

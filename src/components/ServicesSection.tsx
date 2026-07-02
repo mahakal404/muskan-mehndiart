@@ -57,7 +57,7 @@ const cardVariants: Variants = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-28 bg-[#0B1120] relative overflow-hidden">
+    <section id="services" className="py-24 md:py-32 bg-[#0B1120] relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />

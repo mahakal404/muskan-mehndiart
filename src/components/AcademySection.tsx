@@ -30,7 +30,7 @@ export default function AcademySection() {
   ];
 
   return (
-    <section id="academy" className="py-28 bg-[#080e1a] relative overflow-hidden">
+    <section id="academy" className="py-24 md:py-32 bg-[#080e1a] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
       <div className="absolute top-1/2 -translate-y-1/2 -left-32 w-96 h-96 bg-cyan-500/8 rounded-full blur-[120px] pointer-events-none" />
