@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Eye, Instagram } from "lucide-react";
+import { Eye } from "lucide-react";
 
 const galleryImages = [
   "/Gallery1.webp",
@@ -101,7 +101,11 @@ export default function GallerySection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300"
           >
-            <Instagram className="w-5 h-5 text-cyan-400" />
+            <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
             View All on Instagram
           </a>
         </motion.div>
