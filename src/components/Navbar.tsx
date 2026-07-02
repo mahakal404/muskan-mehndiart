@@ -60,6 +60,8 @@ export default function Navbar() {
                   src="/mushkan.jpg"
                   alt="Muskan Mehndi Art Logo"
                   fill
+                  sizes="56px"
+                  priority
                   className="object-cover"
                 />
               </div>

@@ -16,6 +16,7 @@ export default function Footer() {
                 src="/mushkan.jpg"
                 alt="Muskan Mehndi Art Logo"
                 fill
+                sizes="80px"
                 className="object-cover"
               />
             </div>

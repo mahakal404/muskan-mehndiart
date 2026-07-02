@@ -8,7 +8,7 @@ import Image from "next/image";
 const images = [
   "/class1.webp",
   "/class2.webp",
-  "/class3.webp",
+  "/class3.jpg",
   "/class4.jpg"
 ];
 
