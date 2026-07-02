@@ -12,7 +12,7 @@ const galleryImages = [
   "/Gallery5.webp",
   "/Gallery6.webp",
   "/Gallery8.webp",
-  "/Gallery9.jpg",
+  "/Gallery9.webp",
   "/Gallery10.webp",
   "/Gallery11.webp"
 ];
@@ -72,6 +72,7 @@ export default function GallerySection() {
                   alt={`Muskan Mehndi Art Gallery Image ${index + 1}`}
                   width={500}
                   height={700}
+                  priority={index < 4}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
