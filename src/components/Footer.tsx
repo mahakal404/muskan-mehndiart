@@ -71,27 +71,26 @@ export default function Footer() {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-0" />
       </div>
 
-      {/* RNEXT Signature Footer — exact JSX as specified */}
-      <div className="flex flex-col items-center justify-center py-8 bg-[#070b14] text-slate-400 border-t border-white/10">
-        <div className="flex items-center mb-2">
-          <p className="text-sm">© 2026 Muskan Mehndi Art. All rights reserved.</p>
-        </div>
+      {/* RNEXT Signature Footer */}
+      <div className="flex flex-col items-center justify-center space-y-3 mt-8 pb-8 border-t border-white/10 bg-[#070b14] pt-8">
+        {/* Copyright Text */}
+        <p className="text-slate-400 text-sm">
+          © 2026 Muskan Mehndi Art. All rights reserved.
+        </p>
 
-        <div className="flex items-center">
-          <span className="hidden md:block mx-2 text-slate-500">•</span>
-          <p className="text-sm font-medium flex items-center gap-1.5">
-            Built by
-            <span className="relative group cursor-pointer ml-1">
-              {/* Text with Neon Glow on Hover */}
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wider transition-all duration-500 group-hover:from-cyan-300 group-hover:to-blue-400 group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.8)]">
-                RNEXT.in
-              </span>
-
-              {/* Expanding Line with Electric Neon Shadow */}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-500 ease-out group-hover:w-full rounded-full group-hover:shadow-[0_0_10px_2px_rgba(34,211,238,0.6)] group-hover:h-[3px]"></span>
+        {/* Built by Signature */}
+        <p className="text-slate-400 text-sm font-medium flex items-center gap-1.5">
+          Built by
+          <span className="relative group cursor-pointer ml-1">
+            {/* Text with Neon Glow on Hover */}
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wider transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">
+              RNEXT.in
             </span>
-          </p>
-        </div>
+            
+            {/* Expanding Underline with Electric Neon Shadow */}
+            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-500 ease-out group-hover:w-full rounded-full group-hover:shadow-[0_0_8px_2px_rgba(34,211,238,0.6)] group-hover:h-[3px]"></span>
+          </span>
+        </p>
       </div>
     </footer>
   );
