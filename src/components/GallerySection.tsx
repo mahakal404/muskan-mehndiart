@@ -1,14 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { Eye, Instagram } from "lucide-react";
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1595922378931-15b026df21b5?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1582236814271-469b823e5900?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1596700812739-16e78e22543d?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1583089892943-e02e52f1e679?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1597816053351-e408ecbb7e37?q=80&w=2070&auto=format&fit=crop",
+  "/Gallery1.webp",
+  "/Gallery2.webp",
+  "/Gallery3.webp",
+  "/Gallery4.webp",
+  "/Gallery5.webp",
+  "/Gallery6.webp",
+  "/Gallery8.webp",
+  "/Gallery9.jpg",
+  "/Gallery10.webp",
+  "/Gallery11.webp"
 ];
 
 export default function GallerySection() {
@@ -50,32 +56,31 @@ export default function GallerySection() {
         </div>
 
         {/* Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-5 space-y-5">
+        <div className="columns-1 sm:columns-2 lg:columns-3 lg:gap-6 gap-4">
           {galleryImages.map((src, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.92 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="break-inside-avoid relative overflow-hidden rounded-2xl border border-white/10 group cursor-pointer"
+              transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+              className="break-inside-avoid mb-4 sm:mb-6 relative group overflow-hidden rounded-2xl cursor-pointer border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_30px_rgba(34,211,238,0.2)] transition-all duration-500"
             >
-              <img
-                src={src}
-                alt={`Mehndi Design ${index + 1}`}
-                className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                loading="lazy"
-              />
-              {/* Teal hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-              {/* Glow border on hover */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-cyan-400/0 group-hover:border-cyan-400/40 transition-all duration-400 pointer-events-none" />
-              {/* Center icon on hover */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+              <div className="relative w-full overflow-hidden rounded-2xl">
+                <Image
+                  src={src}
+                  alt={`Muskan Mehndi Art Gallery Image ${index + 1}`}
+                  width={500}
+                  height={700}
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+
+              {/* Glassmorphism Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/80 via-cyan-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-cyan-500/50 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-500 delay-100">
+                  <Eye className="w-6 h-6 text-cyan-400" />
                 </div>
               </div>
             </motion.div>
@@ -96,11 +101,7 @@ export default function GallerySection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/5 border border-white/15 text-white font-medium hover:bg-white/10 hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all duration-300"
           >
-            <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
+            <Instagram className="w-5 h-5 text-cyan-400" />
             View All on Instagram
           </a>
         </motion.div>
