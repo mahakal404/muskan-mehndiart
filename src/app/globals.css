@@ -5,6 +5,10 @@
   --foreground: #e2e8f0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-primary: #22d3ee;
   --color-accent: #f59e0b;

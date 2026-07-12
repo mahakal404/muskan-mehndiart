@@ -37,6 +37,19 @@ export default function Navbar() {
     { name: "Gallery", href: "#gallery" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    // Extract ID from href
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -54,7 +67,7 @@ export default function Navbar() {
         <div className="px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3 group">
+            <a href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center gap-3 group">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-cyan-400/50 group-hover:border-cyan-400 group-hover:shadow-[0_0_10px_rgba(34,211,238,0.4)] transition-all duration-300">
                 <Image
                   src="/mushkan.jpg"
@@ -76,6 +89,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="relative px-4 py-2 text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-medium text-sm group"
                 >
                   {link.name}
@@ -119,7 +133,7 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="block px-4 py-3 text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-500/5 rounded-xl transition-all duration-200"
                   >
                     {link.name}
