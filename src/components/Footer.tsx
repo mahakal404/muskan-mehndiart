@@ -37,7 +37,7 @@ export default function Footer() {
               href="https://instagram.com/muskan_mehndiart19"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-all duration-300"
+              className="flex items-center space-x-2 group transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,20 +49,24 @@ export default function Footer() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-5 h-5"
+                className="w-5 h-5 text-yellow-400"
               >
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
-              <span>@muskan_mehndiart19</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 font-medium">
+                @muskan_mehndiart19
+              </span>
             </a>
             <a
               href="tel:+919978089491"
-              className="flex items-center space-x-2 text-slate-400 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-all duration-300"
+              className="flex items-center space-x-2 group transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]"
             >
-              <Phone className="w-5 h-5" />
-              <span>+91 9978089491</span>
+              <Phone className="w-5 h-5 text-yellow-400" />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 font-medium">
+                +91 9978089491
+              </span>
             </a>
           </div>
         </div>
