@@ -57,8 +57,8 @@ export default function GallerySection() {
           />
         </div>
 
-        {/* Masonry Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 lg:gap-6 gap-4">
+        {/* Spotlight Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 group/gallery">
           {galleryImages.map((src, index) => (
             <motion.div
               key={index}
@@ -66,24 +66,22 @@ export default function GallerySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
-              className="break-inside-avoid mb-4 sm:mb-6 relative group overflow-hidden rounded-2xl cursor-pointer border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_30px_rgba(34,211,238,0.2)] transition-all duration-500"
+              className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer border border-white/10 transition-all duration-500 group-hover/gallery:opacity-50 group-hover/gallery:blur-[2px] hover:!opacity-100 hover:!blur-none hover:scale-105 hover:z-10 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] group/card"
             >
-              <div className="relative w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={src}
-                  alt={`Muskan Mehndi Art Gallery Image ${index + 1}`}
-                  width={500}
-                  height={700}
-                  priority={index < 4}
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
+              <Image
+                src={src}
+                alt={`Muskan Mehndi Art Gallery Image ${index + 1}`}
+                fill
+                priority={index < 4}
+                className="object-cover transition-transform duration-700 ease-in-out group-hover/card:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
 
-              {/* Glassmorphism Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/80 via-cyan-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-cyan-500/50 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-500 delay-100">
-                  <Eye className="w-6 h-6 text-cyan-400" />
+              {/* Luxury Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                <div className="translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500 ease-out flex items-center justify-center gap-2 text-white font-medium bg-white/10 backdrop-blur-md border border-white/20 rounded-full py-2.5 px-5 mx-auto hover:bg-white/20 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors">
+                  <Eye className="w-5 h-5 text-cyan-400" />
+                  <span className="font-medium tracking-wide text-sm">View Design</span>
                 </div>
               </div>
             </motion.div>
