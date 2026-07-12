@@ -43,7 +43,7 @@ export default function AcademySection() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.5 }}
             className="flex items-center gap-2 text-cyan-400 font-medium tracking-widest uppercase text-sm mb-4 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10"
           >
@@ -52,7 +52,7 @@ export default function AcademySection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
           >
@@ -64,7 +64,7 @@ export default function AcademySection() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-amber-400 text-lg font-medium tracking-wide"
           >
@@ -78,7 +78,7 @@ export default function AcademySection() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8 }}
             className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-cyan-500/30 shadow-[0_0_40px_-10px_rgba(34,211,238,0.25)] group"
           >
@@ -121,7 +121,7 @@ export default function AcademySection() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col justify-center"
           >
@@ -137,7 +137,7 @@ export default function AcademySection() {
                     key={item.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                     className="flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-2xl hover:border-cyan-500/40 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-all duration-300 group"
                   >
@@ -157,7 +157,7 @@ export default function AcademySection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-2"
             >

@@ -30,7 +30,7 @@ export default function GallerySection() {
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.5 }}
             className="text-cyan-400 font-medium tracking-widest uppercase text-sm mb-3"
           >
@@ -39,7 +39,7 @@ export default function GallerySection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
           >
@@ -51,7 +51,7 @@ export default function GallerySection() {
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="w-24 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"
           />
@@ -64,7 +64,7 @@ export default function GallerySection() {
               key={index}
               initial={{ opacity: 0, scale: 0.92 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
               className="break-inside-avoid mb-4 sm:mb-6 relative group overflow-hidden rounded-2xl cursor-pointer border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_30px_rgba(34,211,238,0.2)] transition-all duration-500"
             >
@@ -94,7 +94,7 @@ export default function GallerySection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-14"
         >

@@ -18,7 +18,7 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ type: "spring", stiffness: 60, damping: 15, duration: 0.8 }}
             className="relative"
           >
@@ -41,7 +41,7 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.1, duration: 0.8 }}
             className="flex flex-col justify-center"
           >
