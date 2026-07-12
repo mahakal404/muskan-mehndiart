@@ -83,18 +83,24 @@ export default function HeroSection() {
           Professional Mehndi Artist · Valsad · Available Worldwide
         </motion.div>
 
-        {/* Main Title */}
-        <motion.h1
-          variants={itemVariants}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
-        >
-          <span className="block bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]">
-            Exquisite Bridal
-          </span>
-          <span className="block text-white mt-1 drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
-            Mehndi Artistry
-          </span>
-        </motion.h1>
+        {/* Main Title & Glowing Underline */}
+        <motion.div variants={itemVariants} className="flex flex-col items-center mb-6">
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-center">
+            <span className="block bg-gradient-to-r from-cyan-300 via-white to-cyan-400 bg-[length:200%_auto] animate-[gradient_4s_linear_infinite] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]">
+              Exquisite Bridal
+            </span>
+            <span className="block text-white mt-1 drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
+              Mehndi Artistry
+            </span>
+          </h1>
+          
+          <motion.div
+            initial={{ width: "6rem", opacity: 0 }}
+            animate={{ width: "75%", opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.6 }}
+            className="h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-6 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
+          />
+        </motion.div>
 
         {/* Subtitle */}
         <motion.p
