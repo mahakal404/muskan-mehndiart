@@ -76,6 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${playfair.variable} ${outfit.variable} scroll-smooth antialiased font-sans`}
     >
       <head>
