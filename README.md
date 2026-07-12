@@ -2,6 +2,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+> [!WARNING]  
+> **Security Notice:** If any secrets (API keys, database URLs, Supabase/Stripe tokens) were ever hardcoded in this repository in the past, they are permanently stored in the git history. You must **rotate any previously hardcoded secrets immediately**. Ensure all future secrets are strictly placed in a `.env` or `.env.local` file and never committed.
+
 First, run the development server:
 
 ```bash
