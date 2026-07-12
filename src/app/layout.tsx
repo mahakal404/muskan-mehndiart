@@ -13,16 +13,23 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
-  description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+  title: "Best Bridal Mehndi Artist in Valsad | Destination Wedding Henna",
+  description: "Premium bridal mehndi artist in Valsad, Pardi & Gujarat. Specializing in luxury bridal henna, 100% organic custom portrait mehndi, and worldwide destination weddings.",
+  keywords: [
+    "Best bridal mehndi artist in Valsad",
+    "Portrait mehndi artist",
+    "Luxury bridal henna packages",
+    "Destination wedding mehndi artist",
+    "100% organic bridal mehndi artist"
+  ],
   metadataBase: new URL("https://muskanmehndiart.netlify.app"),
   icons: {
     icon: "/fevi.webp",
     apple: "/fevi.webp",
   },
   openGraph: {
-    title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
-    description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+    title: "Best Bridal Mehndi Artist in Valsad | Destination Wedding Henna",
+    description: "Premium bridal mehndi artist in Valsad, Pardi & Gujarat. Specializing in luxury bridal henna, 100% organic custom portrait mehndi, and worldwide destination weddings.",
     url: "https://muskanmehndiart.netlify.app",
     siteName: "Muskan Mehndi Art",
     images: [
@@ -38,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muskan Mehndi Art | Exquisite Bridal Mehndi",
-    description: "Professional Mehndi Artist from Valsad. Available Worldwide. Book your special day now.",
+    title: "Best Bridal Mehndi Artist in Valsad | Destination Wedding Henna",
+    description: "Premium bridal mehndi artist in Valsad, Pardi & Gujarat. Specializing in luxury bridal henna, 100% organic custom portrait mehndi, and worldwide destination weddings.",
     images: ["/mushkan.jpg"],
   },
 };
@@ -49,11 +56,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Muskan Mehndi Art",
+    "image": "https://muskanmehndiart.netlify.app/mushkan.jpg",
+    "description": "100% Organic Henna Artist available worldwide. Premium bridal mehndi artist in Valsad, Pardi & Gujarat.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Valsad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "url": "https://muskanmehndiart.netlify.app",
+    "telephone": "+919978089491",
+    "priceRange": "$$"
+  };
+
   return (
     <html
       lang="en"
       className={`${playfair.variable} ${outfit.variable} scroll-smooth antialiased font-sans`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col">{children}</body>
     </html>
   );

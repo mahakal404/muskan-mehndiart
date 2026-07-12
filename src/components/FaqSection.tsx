@@ -6,24 +6,24 @@ import { ChevronDown, MessageCircleQuestion } from "lucide-react";
 
 const faqs = [
   {
-    question: "How far in advance should I book my bridal mehndi?",
+    question: "How long does a full premium bridal mehndi application take?",
     answer:
-      "We recommend booking at least 3-6 months in advance, especially during peak wedding seasons (October to February). This ensures you secure your desired dates for the main event and any pre-wedding festivities.",
+      "A full premium bridal mehndi application typically takes 4 to 6 hours. This ensures immaculate detail and precision for intricate traditional designs covering both hands and feet.",
   },
   {
-    question: "Do you travel outside the city for events?",
+    question: "Where can I find 100% organic chemical-free bridal henna in Valsad?",
     answer:
-      "Yes, absolutely! We provide our bridal mehndi services nationwide and internationally. Travel and accommodation charges are calculated based on the destination and event requirements.",
+      "At Muskan Mehndi Art, we exclusively provide 100% organic, chemical-free bridal henna across Valsad and Pardi. Our henna is freshly mixed with natural essential oils to guarantee a rich, safe, and long-lasting dark stain.",
   },
   {
-    question: "Is your henna 100% organic and safe?",
+    question: "What is the duration and fee for a professional bridal mehndi course in Pardi?",
     answer:
-      "Yes, our henna is 100% natural, organic, and freshly mixed with essential oils like eucalyptus and lavender. It is entirely free from chemicals, preservatives, or artificial dyes, ensuring a deep, rich, and safe stain.",
+      "Our professional basic to bridal mehndi course in Pardi spans 45 days. It covers everything from fundamental patterns to advanced portrait designs. Please contact us directly for the latest fee structure and enrollment details.",
   },
   {
-    question: "How long does a typical bridal mehndi design take?",
+    question: "Does Muskan Mehndi Art travel outside Gujarat for destination weddings?",
     answer:
-      "A traditional intricate bridal mehndi covering hands (up to elbows) and feet (up to calves) typically takes between 4 to 6 hours. The duration may vary based on the complexity and denseness of the chosen design.",
+      "Yes, we specialize in destination weddings! We travel outside Gujarat, nationwide, and internationally to provide luxury bridal henna packages. Travel and accommodation are planned according to your bespoke event requirements.",
   },
 ];
 
@@ -34,8 +34,25 @@ export default function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-24 relative overflow-hidden bg-[#0B1120]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Background glowing effects */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-cyan-900/20 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
