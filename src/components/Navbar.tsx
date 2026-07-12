@@ -78,7 +78,7 @@ export default function Navbar() {
                   className="object-cover"
                 />
               </div>
-              <span className="font-heading text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-all duration-300">
+              <span className="font-heading text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-[length:200%_auto] animate-[gradient_3s_linear_infinite] bg-clip-text text-transparent group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-all duration-300">
                 Muskan Mehndi Art
               </span>
             </a>
